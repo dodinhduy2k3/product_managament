@@ -14,6 +14,11 @@ const router = require("./router/client/index.router")
 // // trang chủ
 app.use(express.static("public"))
 
+// const mongoose = require("mongoose")
+//     mongoose.connect(process.env.MONGO_URL)
+const database = require("./config/database")
+database.connect()
+   
 router(app)
 
 // app.get("/",(req,res)=>{
